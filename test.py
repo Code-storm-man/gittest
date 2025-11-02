@@ -3,6 +3,12 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 from matplotlib.font_manager import FontProperties
+# 修正键名并指定字体
+plt.rcParams['font.sans-serif'] = ['simsun']
+plt.rcParams['axes.unicode_minus'] = False
+# 创建FontProperties对象，指定使用宋体
+font = FontProperties(fname=r'C:\Windows\Fonts\simsun.ttc', size=12)
+
 
 # 创建示例数据集（替换为您的实际数据）
 np.random.seed(42)
@@ -24,8 +30,7 @@ sns.boxplot(
     fliersize=3  # 异常点尺寸
 )
 
-# 创建FontProperties对象，指定使用宋体
-font = FontProperties(fname=r'C:\Windows\Fonts\simsun.ttc', size=12)
+
 
 # 添加图表装饰
 plt.title('分组箱线图示例', fontproperties=font)
